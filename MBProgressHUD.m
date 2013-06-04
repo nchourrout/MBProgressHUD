@@ -282,9 +282,11 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 
 - (void)didMoveToSuperview {
 	// We need to take care of rotation ourselfs if we're adding the HUD to a window
-	if ([self.superview isKindOfClass:[UIWindow class]]) {
+	/*
+     if ([self.superview isKindOfClass:[UIWindow class]]) {
 		[self setTransformForCurrentOrientation:NO];
 	}
+    */
 }
 
 #pragma mark - Internal show & hide operations
@@ -692,8 +694,10 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	UIView *superview = self.superview;
 	if (!superview) {
 		return;
-	} else if ([superview isKindOfClass:[UIWindow class]]) {
+	/*
+    } else if ([superview isKindOfClass:[UIWindow class]]) {
 		[self setTransformForCurrentOrientation:YES];
+    */
 	} else {
 		self.bounds = self.superview.bounds;
 		[self setNeedsDisplay];
